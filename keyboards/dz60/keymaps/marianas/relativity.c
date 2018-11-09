@@ -21,7 +21,94 @@ static int16_t relativityTimer = 0;
 
 bool tempOff = false;
 
+enum WordIndex
+{
+  Approval = 0,
+  Corp,
+  Corporation,
+  Contact,
+  Center,
+  Ctr,
+  Darden,
+  Dist,
+  Distribution,
+  Distributor,
+  Global,
+  Instance,
+  Item,
+  Lookup,
+  Pricing,
+  Person,
+  Product,
+  NadRate,
+  Step,
+  Session,
+  Supplier,
+  Task,
+  Type,
+  Workflow,
+  null
+};
 
+const char PROGMEM Words[][16] =
+{
+  [Approval] = "Approval",
+  [Corp] = "Corp",
+  [Corporation] = "Corporation",
+  [Contact] = "Contact",
+  [Center] = "Center",
+  [Ctr] = "Ctr",
+  [Darden] = "Darden",
+  [Dist] = "Dist",
+  [Distribution] = "Distribution",
+  [Distributor] = "Distributor",
+  [Global] = "Global",
+  [Instance] = "Instance",
+  [Item] = "Item",
+  [Lookup] = "Lookup",
+  [Pricing] = "Pricing",
+  [Person] = "Person",
+  [Product] = "Product",
+  [NadRate] = "NadRate",
+  [Step] = "Step",
+  [Session] = "Session",
+  [Supplier] = "Supplier",
+  [Task] = "Task",
+  [Type] = "Type",
+  [Workflow] = "Workflow",
+  [null] = "\0"
+};
+
+const uint8_t PROGMEM Phrases[][5] =
+{
+  {Corporation, (uint16_t)NULL},
+  {Corp, Dist, Ctr, Approval, (uint16_t)NULL},
+  {Corp, Distribution, Center, Product, (uint16_t)NULL},
+  {Corporation, Darden, Item, (uint16_t)NULL},
+  {Darden, Item, (uint16_t)NULL},
+  {Darden, Product, (uint16_t)NULL},
+  {Distribution, Center, (uint16_t)NULL},
+  {Distributor, (uint16_t)NULL},
+  {Global, Lookup, (uint16_t)NULL},
+  {Global, Lookup, Type, (uint16_t)NULL},
+  {NadRate, (uint16_t)NULL},
+  {Person, Type, (uint16_t)NULL},
+  {Person, (uint16_t)NULL},
+  {Product, Dist, Center, Pricing, (uint16_t)NULL},
+  {Product, Distribution, Center, (uint16_t)NULL},
+  {Product, Supplier, (uint16_t)NULL},
+  {Product, Supplier, Contact, (uint16_t)NULL},
+  {Supplier, (uint16_t)NULL},
+  {Supplier, Contact, (uint16_t)NULL},
+  {Supplier, Supplier, Type, (uint16_t)NULL},
+  {Supplier, Type, (uint16_t)NULL},
+  {Workflow, (uint16_t)NULL},
+  {Workflow, Instance, (uint16_t)NULL},
+  {Workflow, Instance, Task, (uint16_t)NULL},
+  {Workflow, Step, (uint16_t)NULL},
+  {Workflow, Task, (uint16_t)NULL},
+  {(uint16_t)NULL}
+};
 
 
 void initStringData()
@@ -61,7 +148,7 @@ void activateRelativity(void)
 }
 
 bool deactivateRelativity(void)
-{  
+{
   rgblight_mode(9);
   eraseKeyCodes();
   eraseTableAbbreviation();
@@ -482,7 +569,7 @@ bool handleSmartMacros(uint16_t keycode, keyrecord_t *record)
           tempOff = true;
           return true;
         }
-        
+
 
       case KC_SPC:
         printTableAbbreviation();
