@@ -88,6 +88,10 @@ enum sql_macros {
   S_ALTER, // Esc
   S_ASTRK, // *
 
+  S_COUNT, // COUNT(1)
+  S_NOT,   // NOT
+  S_GROUP, // GROUP BY
+
   TD_A,
   TD_B,
   TD_C, // Corp, Corporation, Company

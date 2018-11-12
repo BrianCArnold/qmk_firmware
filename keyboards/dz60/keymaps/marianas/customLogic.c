@@ -67,7 +67,13 @@ bool printSqlVerbs(uint16_t keycode, keyrecord_t *record)
         SEND_STRING("ALTER SESSION SET CURRENT_SCHEMA = SUPPLY;"); return false;
       case S_ASTRK: 
         SEND_STRING("* "); return false;
-        
+      case S_NOT:
+        SEND_STRING("NOT "); return false;
+      case S_GROUP:
+        SEND_STRING("GROUP BY "); return false;
+      case S_COUNT:
+        SEND_STRING("COUNT(1) "); return false;
+
     }
   }
   return true;
@@ -77,6 +83,7 @@ bool printSqlVerbs(uint16_t keycode, keyrecord_t *record)
 bool isFn = false;
 bool didFn = false;
 
+bool justGrv = false;
 
 bool updateLayerState(uint16_t keycode, keyrecord_t *record)
 {
@@ -90,6 +97,14 @@ bool updateLayerState(uint16_t keycode, keyrecord_t *record)
         layer_on(FN_LAYER);
         isFn = true;
         return false;
+      case ESCAP:
+	if (isShifted())
+	{
+          register_code(KC_GRV);
+	  justGrv = true;
+          return false;
+	}
+	return true;
     }
     if (isFn)
     {
@@ -121,6 +136,15 @@ bool updateLayerState(uint16_t keycode, keyrecord_t *record)
         didFn = false;
         isFn = false;
         return false;
+      case ESCAP:
+	if (justGrv)
+	{
+          unregister_code(KC_GRV);
+          justGrv = false;
+          return false;
+	}
+	return true;
+
     }
   }
   return true;
