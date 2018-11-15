@@ -122,7 +122,21 @@ enum sql_macros {
   TD_ENT,
   TD_ESC,
 
-  FN_QT
+  FN_QT,
+
+  R_D1,
+  R_D2,
+  R_D3,
+  R_D4,
+  R_D5,
+  R_D6,
+  R_D7,
+  R_D8,
+  R_D9,
+  R_D10,
+  R_D12,
+  R_D20,
+  R_DD
 };
 
 bool isShifted(void);

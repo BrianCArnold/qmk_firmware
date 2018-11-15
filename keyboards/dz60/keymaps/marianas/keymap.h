@@ -10,6 +10,6 @@ enum marianas_layers {
   NAV_CLUSTER,
   GAMING,
   SQLMACROS,
+  DICE,
   FN_LAYER
 };
-
