@@ -23,13 +23,10 @@ uint32_t layer_state_set_user(uint32_t state)
       rgblight_mode(26);
       break;
     case SQLMACROS:
-      rgblight_mode(1);
+      rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD+2);
       break;
     case FN_LAYER:
       rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL+5);
-      break;
-    case DICE:
-      rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD+2);
       break;
   }
   return state;
