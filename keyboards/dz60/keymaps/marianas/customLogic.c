@@ -32,6 +32,44 @@ uint32_t layer_state_set_user(uint32_t state)
   return state;
 }
 
+bool custom_keys(uint16_t keycode, keyrecord_t *record)
+{
+  if (record->event.pressed)
+  {
+    switch(keycode)
+    {
+      case SM_UP:
+        for (int i = 0; i < 19; i++)
+        {
+          register_code(KC_UP);
+          unregister_code(KC_UP);
+        }
+        register_code(KC_UP);
+        return false;
+      case SM_DN:
+        for (int i = 0; i < 19; i++)
+        {
+          register_code(KC_DOWN);
+          unregister_code(KC_DOWN);
+        }
+        register_code(KC_DOWN);
+        return false;
+    }
+  }
+  else
+  {
+    switch(keycode)
+    {
+      case SM_UP:
+      unregister_code(KC_UP);
+        return false;
+      case SM_DN:
+      unregister_code(KC_DOWN);
+        return false;
+    }
+  }
+  return true;
+}
 
 
 bool printSqlVerbs(uint16_t keycode, keyrecord_t *record)
@@ -329,5 +367,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     printSqlVerbs(keycode, record) &&
     updateLayerState(keycode, record) &&
     handleSmartMacros(keycode, record) &&
-    process_dice_roll(keycode, record);
+    process_dice_roll(keycode, record) &&
+    custom_keys(keycode, record);
 }

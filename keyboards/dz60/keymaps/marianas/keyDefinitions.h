@@ -136,7 +136,10 @@ enum sql_macros {
   R_D10,
   R_D12,
   R_D20,
-  R_DD
+  R_DD,
+
+  SM_UP,
+  SM_DN
 };
 
 bool isShifted(void);
