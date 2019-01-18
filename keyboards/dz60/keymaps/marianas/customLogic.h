@@ -1,5 +1,7 @@
 #define fnTimeout 500
-
+#define randadd 59239
+#define randmul 41149
+#define randmod 60899
 
 uint32_t layer_state_set_user(uint32_t state);
 
