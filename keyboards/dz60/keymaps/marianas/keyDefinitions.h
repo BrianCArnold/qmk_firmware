@@ -88,6 +88,10 @@ enum sql_macros {
   S_ALTER, // Esc
   S_ASTRK, // *
 
+  S_COUNT, // COUNT(1)
+  S_NOT,   // NOT
+  S_GROUP, // GROUP BY
+
   TD_A,
   TD_B,
   TD_C, // Corp, Corporation, Company
@@ -118,7 +122,24 @@ enum sql_macros {
   TD_ENT,
   TD_ESC,
 
-  FN_QT
+  FN_QT,
+
+  R_D1,
+  R_D2,
+  R_D3,
+  R_D4,
+  R_D5,
+  R_D6,
+  R_D7,
+  R_D8,
+  R_D9,
+  R_D10,
+  R_D12,
+  R_D20,
+  R_DD,
+
+  SM_UP,
+  SM_DN
 };
 
 bool isShifted(void);
