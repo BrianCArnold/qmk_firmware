@@ -78,8 +78,13 @@ bool printSqlVerbs(uint16_t keycode, keyrecord_t *record)
   {
     switch (keycode)
     {
+<<<<<<< HEAD
+      case S_LFTJN: 
+        SEND_STRING("LEFT JOIN "); 
+=======
       case S_LFTJN:
         SEND_STRING("LEFT JOIN ");
+>>>>>>> a4579f6b298d32210c9893924bf4dfd69ffbff30
         activateRelativity();
         return false;
       case S_INRJN:
