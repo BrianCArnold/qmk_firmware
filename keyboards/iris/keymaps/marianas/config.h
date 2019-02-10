@@ -1,0 +1,1 @@
+#define SPLIT_HAND_PIN F4

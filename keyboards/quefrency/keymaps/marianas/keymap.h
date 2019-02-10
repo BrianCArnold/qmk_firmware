@@ -1,5 +1,9 @@
 #include QMK_KEYBOARD_H
 
+#undef DEBOUNCE
+#define DEBOUNCE 15
+
+
 
 enum marianas_layers {
   QWERTY,

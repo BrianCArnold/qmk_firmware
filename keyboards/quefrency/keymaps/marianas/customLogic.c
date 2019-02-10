@@ -32,6 +32,10 @@ uint32_t layer_state_set_user(uint32_t state)
   return state;
 }
 
+#define colTimeout 250
+
+static int16_t colonTimer = 0;
+
 bool custom_keys(uint16_t keycode, keyrecord_t *record)
 {
   if (record->event.pressed)
@@ -54,6 +58,15 @@ bool custom_keys(uint16_t keycode, keyrecord_t *record)
         }
         register_code(KC_DOWN);
         return false;
+      case KC_SCLN:
+
+        if (colonTimer == 0 || TIMER_DIFF_16(timer_read(), colonTimer) >= colTimeout){
+          register_code(KC_SCLN);
+          unregister_code(KC_SCLN);
+        }
+        colonTimer = timer_read();
+        return false;
+
     }
   }
   else
@@ -65,6 +78,8 @@ bool custom_keys(uint16_t keycode, keyrecord_t *record)
         return false;
       case SM_DN:
       unregister_code(KC_DOWN);
+        return false;
+      case KC_SCLN:
         return false;
     }
   }
