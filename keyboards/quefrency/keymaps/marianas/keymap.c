@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______,    ____, S_WHERE, ____, ____, ____, ____, ____, S_INRJN, S_ORDER, ____, ____, ____, ______,
       _______, KC_LBRC, S_SLCT, S_ASTRK ,S_FROM, S_GROUP, ____, ____, ____, S_LFTJN, ____, RBRC, ___________,
       ________,  RGB_VAI, RGB_VAD, S_COUNT,  ____,  ____,  S_NOT,  ____,  ____,  ____,  ____,  _________________, ____,
-      ____,  ____,  ____, ____, LSFT(KC_LBRC), RSFT(KC_RBRC), ____, ____,  ____,  ____,  ____,  ____),
+      ____,  ____,  ____, ____, LSFT(KC_LBRC), RSFT(KC_RBRC), ____, ____,  ____,  ____,  ____,  RESET),
 
   [FN_LAYER]=
     LAYOUT(
