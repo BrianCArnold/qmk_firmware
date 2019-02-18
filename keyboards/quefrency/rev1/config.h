@@ -33,10 +33,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 12
 #define MATRIX_COLS 8
 
-// wiring of each half
-#define MATRIX_ROW_PINS { F4, D4, D2, E6, B4, B5 }
-#define MATRIX_COL_PINS { F5, F6, F7, B1, B3, B2, B6, C6 }
+#define MATRIX_ROW_PINS { F4, D4, D7, E6, B4, B5 }
+#define MATRIX_COL_PINS { F5, F6, B7, D5, C7, F1, F0, C6 }
 #define SPLIT_HAND_PIN D2
+// wiring of each half
+//yy#define MATRIX_ROW_PINS { F4, D4, D2, E6, B4, B5 }
+//#define MATRIX_COL_PINS { F5, F6, F7, B1, B3, B2, B6, C6 }
+//#define SPLIT_HAND_PIN D2
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCING_DELAY 5
