@@ -14,7 +14,7 @@ uint32_t layer_state_set_user(uint32_t state)
   switch (biton32(state))
   {
     case QWERTY:
-      rgblight_mode(9);
+      rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
       break;
     case SQLMACROS:
       rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD+2);

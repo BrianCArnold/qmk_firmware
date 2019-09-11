@@ -26,6 +26,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define USE_SERIAL
 #define USE_I2C
 #define COMBO_COUNT 13
+
+#undef RGBLIGHT_ANIMATIONS
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#define RGBLIGHT_EFFECT_KNIGHT
+
 #undef RGBLED_NUM
 #define RGBLED_NUM 22
 #define RGBLED_SPLIT { 10, 12 }
+
+
