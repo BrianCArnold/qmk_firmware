@@ -8,22 +8,12 @@
         "**/*.hex": true
     },
     "files.associations": {
-        "*.h": "c",
-        "*.c": "c",
-        "*.cpp": "cpp",
-        "*.hpp": "cpp",
-        "xstddef": "c"
-    },
-    "plsql-language.connections": [
-      {
-        "database": "DSUPPLY",
-        "password": "speedy_delivery",
-        "schema": "supply",
-        "username": "supply",
-        "active": true,
-        "ID": 3,
-        "name": "supply@DSUPPLY"
-      }
-    ],
-    "plsql-language.connection.activeInfos": "supply/speedy_delivery@DSUPPLY"
+      "*.h": "c",
+      "*.c": "c",
+      "*.cpp": "cpp",
+      "*.hpp": "cpp",
+      "xstddef": "c",
+      "type_traits": "c",
+      "utility": "c"
+    }
 }
